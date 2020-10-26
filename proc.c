@@ -446,7 +446,7 @@ int getpinfo(struct proc_stat *process_state, int pid)
 }
 
 //set_priority syscall
-int set_priority(int pid, int new_priority)
+int set_priority(int new_priority, int pid)
 {
   int old_priority = -1;
   //acquire process table lock
