@@ -912,7 +912,7 @@ void ps(void)
   struct proc *p;
   char *state;
   uint pc[10];
-
+  cprintf("PID  Priority  Stater_time  w_time  n_run  cur_q  q0  q1  q2  q3  q4\n");
   for (p = ptable.proc; p < &ptable.proc[NPROC]; p++)
   {
     if (p->state == UNUSED)
@@ -921,7 +921,7 @@ void ps(void)
       state = states[p->state];
     else
       state = "???";
-    cprintf("%d %s %s %d", p->pid, state, p->name, p->priority);
+    cprintf("%d %s %s %d", p->pid, p->priority, state, p->name);
     if (p->state == SLEEPING)
     {
       getcallerpcs((uint *)p->context->ebp + 2, pc);
