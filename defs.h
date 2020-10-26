@@ -123,6 +123,11 @@ int             wait(void);
 void            wakeup(void*);
 void            yield(void);
 void            update_running_time(void);
+//added syscalls
+int waitx(int* , int* );
+int getpinfo(struct proc_stat *, int pid);
+int set_priority(int,int);
+void ps(void);
 
 // swtch.S
 void            swtch(struct context**, struct context*);
@@ -188,13 +193,6 @@ void            switchuvm(struct proc*);
 void            switchkvm(void);
 int             copyout(pde_t*, uint, void*, uint);
 void            clearpteu(pde_t *pgdir, char *uva);
-
-
-//added syscalls
-int waitx(int* , int* );
-int getpinfo(struct proc_stat *, int pid);
-int set_priority(int,int);
-void ps(void);
 
 // number of elements in fixed-size array
 #define NELEM(x) (sizeof(x)/sizeof((x)[0]))
