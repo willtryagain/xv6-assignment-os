@@ -194,7 +194,7 @@ void            clearpteu(pde_t *pgdir, char *uva);
 int waitx(int* , int* );
 int getpinfo(struct proc_stat *, int pid);
 int set_priority(int,int);
-
+void ps(void);
 
 // number of elements in fixed-size array
 #define NELEM(x) (sizeof(x)/sizeof((x)[0]))

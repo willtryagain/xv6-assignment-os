@@ -140,3 +140,8 @@ int sys_set_priority(void)
   
   return set_priority(pid,new_priority);
 }
+
+int sys_ps(void) {
+	ps();
+	return 0;
+}
